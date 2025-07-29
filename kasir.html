@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawcoffee - Dashboard Kasir</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-mode">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Draw-Coffee.png">
+            </div>
+            <nav class="nav">
+                <ul>
+                    
+                    <li><a href="kasir.html" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cashier-container" id="cashierDashboard" style="display:none;">
+        <h1><i class="fas fa-cash-register"></i> Dashboard Kasir</h1>
+        
+        <div class="order-controls">
+            <div class="search-box">
+                <input type="text" placeholder="Cari Pesanan...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-controls">
+                <select id="statusFilter">
+                    <option value="all">Semua Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="processing">Diproses</option>
+                    <option value="completed">Selesai</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="orders-grid" id="ordersGrid">
+            <!-- Orders will be loaded here -->
+        </div>
+    </div>
+
+    <div class="login-container" id="loginForm">
+        <h2><i class="fas fa-user-shield"></i> Login Kasir</h2>
+        <form id="cashierLoginForm">
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn">Masuk</button>
+        </form>
+    </div>
+
+    <!-- Order Detail Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Detail Pesanan #<span id="orderId"></span></h2>
+            <div class="order-details">
+                <div class="customer-info">
+                    <h3>Info Pelanggan</h3>
+                    <p><strong>Nama:</strong> <span id="modalCustomerName"></span></p>
+                    <p><strong>No. Meja:</strong> <span id="modalTableNumber"></span></p>
+                    <p><strong>Waktu Pesan:</strong> <span id="orderTime"></span></p>
+                </div>
+                <div class="order-items-list">
+                    <h3>Item Pesanan</h3>
+                    <div id="modalOrderItems"></div>
+                    <div class="order-total">
+                        <p><strong>Total:</strong> <span id="modalTotalPrice"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-actions">
+                <button class="btn btn-process" id="processOrderBtn">Proses Pesanan</button>
+                <button class="btn btn-complete" id="completeOrderBtn" style="display:none;">Selesaikan Pesanan</button>
+                <button class="btn btn-print" id="printReceiptBtn"><i class="fas fa-print"></i> Cetak Struk</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="kasir.js"></script>
+</body>
+</html>

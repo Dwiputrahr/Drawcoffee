@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawcoffee - Pemesanan Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="Mid-client-TSgBDOhNqbNBcqqb"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Draw-Coffee.png">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#order">Pesan</a></li>
+                    <li><a href="#" id="orderTrackingBtn">Lacak Pesanan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>DRAWCOFFEE</h1>
+                <p>Pesan makanan favorit Anda secara online dan nikmati pengalaman bersantap yang tak terlupakan</p>
+                <a href="#menu" class="btn">Lihat Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2>Menu Kami</h2>
+            <div class="menu-filter">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="makanan">Makanan</button>
+                <button class="filter-btn" data-category="minuman">Minuman</button>
+                <button class="filter-btn" data-category="snack">Snack</button>
+            </div>
+            
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="order" id="order">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-summary">
+                    <h2>Pesanan Anda</h2>
+                    <div class="order-items" id="orderItems">
+                        <p class="empty-order">Belum ada pesanan</p>
+                    </div>
+                    <div class="customer-info">
+                        <h3>Informasi Pelanggan</h3>
+                        <div class="form-group">
+                            <input type="text" id="customerName" placeholder="Nama" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="tableNumber" placeholder="Nomor Meja" required>
+                        </div>
+                    </div>
+                    <div class="order-total">
+                        <h3>Total: <span id="totalPrice">Rp 0</span></h3>
+                    </div>
+                    <button class="btn" id="checkoutBtn">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Info Kontak</h3>
+                    <p><strong>Alamat:</strong>  Jl. Tamansari No.3a, Kota Bandung</p>
+                    <p><strong>Telepon:</strong> (+62) 812-2289-2488</p>
+                    <p><strong>Email:</strong> drawcoffeebdg@gmail.com</p>
+                    <p><strong>Jam Operasional:</strong> 07:00 - 22:00 (Setiap Hari)</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Pesan Anda" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="Draw-Coffee.png">
+                    <p>Drawcoffee menyajikan makanan dan minuman berkualitas dengan cita rasa tinggi untuk memanjakan lidah Anda.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Pesan</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="tiktok.com-logo-logo-600x600.png"></a>
+                        <a href="#"><img src="pngtree-instagram-icon-instagram-logo-png-image_3584853.png"></a>
+                        <a href="#"><img src="maps.png" ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Drawcoffee. Seluruh Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1d58310c-fc65-4d66-b986-e3c92e86a97d.png" alt="Ikon centang hijau menunjukkan transaksi berhasil diproses">
+            <h3 id="modalTitle">Pesanan Berhasil!</h3>
+            <p id="modalMessage">Terima kasih atas pesanan Anda. Pesanan sedang diproses dan akan segera kami antarkan.</p>
+            <div id="receiptContent" class="receipt-content"></div>
+            <button class="btn" id="closeSuccessModal">Tutup</button>
+            <button class="btn btn-print" id="printBtn" style="display:none; margin-left:10px;">Cetak Struk</button>
+        </div>
+    </div>
+<!-- Order Tracking Modal -->
+
+    <div class="modal" id="trackOrderModal">
+
+        <div class="modal-content">
+
+            <span class="close-modal">&times;</span>
+
+            <h2><i class="fas fa-truck"></i> Lacak Pesanan Anda</h2>
+
+            <div class="tracking-form">
+
+                <input type="text" id="orderIdInput" placeholder="Masukkan ID Pesanan Anda">
+
+                <button class="btn" id="checkOrderBtn">Cek Status</button>
+
+            </div>
+
+            <div class="tracking-result" id="trackingResult">
+
+                <div class="status-wrapper">
+
+                    <div class="status-progress">
+
+                        <div class="status-step pending active">
+
+                            <div class="status-icon">1</div>
+
+                            <p>Pending</p>
+
+                        </div>
+
+                        <div class="status-step processing">
+
+                            <div class="status-icon">2</div>
+
+                            <p>Diproses</p>
+
+                        </div>
+
+                        <div class="status-step completed">
+
+                            <div class="status-icon">3</div>
+
+                            <p>Selesai</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="order-details" id="orderDetails">
+
+                    <!-- Order details will be loaded here -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="kasir.js"></script>
+</body>
+</html>
