@@ -271,7 +271,7 @@ async function checkout() {
 
     try {
         // 1. Kirim data pesanan ke backend (placeOrder.php) untuk mendapatkan token Midtrans
-        const response = await fetch('placeOrder.php', {
+        const response = await fetch('http://drawcoffee.kesug.com/placeOrder.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
