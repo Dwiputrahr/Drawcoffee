@@ -10,6 +10,11 @@
     // Set 3DS authentication for credit card (default)
     \Midtrans\Config::$is3ds = true;
 
+header("Access-Control-Allow-Origin: https://drawcoffee.vercel.app");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+// ... kode lainnya ...
+
     header('Content-Type: application/json');
 
     $input = file_get_contents('php://input');
